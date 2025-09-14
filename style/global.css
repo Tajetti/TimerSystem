@@ -1,3 +1,7 @@
 :root {
     --cor-menubar: #0F0F23;
+    --border-menubar: #2A2A4A;
+    --text-inactive: #A1A1AA;
+    --bg-text-inactive: #2A2A4A;
+    --bg-text-active: #4F46E5;
 }

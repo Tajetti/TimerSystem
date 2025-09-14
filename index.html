@@ -1,3 +1,6 @@
+<?php 
+    require 'components/header.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="font-inter">
-    <header class="lg:p-4 p-2 bg-[var(--cor-menubar)] flex justify-between sm:p-1">
-        <div class="flex">''
-            <img src="Assets/Image/logo.png" alt="" class="object-contain">
-            <p class="ml-1 text-white font-bold">TimerSystem</p>
+<body>
+    <header class="flex justify-between py-3 px-20 bg-(--cor-menubar)">
+        <div class="flex">
+            <img class="object-contain" src="Assets/Image/logo.png" alt="">
+            <p class="content-center text-white m-2 font-bold">TimerSystem</p>
         </div>
-        <div class="text-[14px] content-center flex gap-3 pr-3">
-            <a href="index.html" class="text-white bg-[#4F46E5] p-1 pt-0 rounded-[8px] ">Relógio</a>
-            <a href="timer.html" class="text-[#A1A1AA]">Timer</a>
+        <div class="flex gap-3 pr-2">
+            <a href="#" class="bg-(--bg-text-active) text-white content-center p-1 rounded-md">Relógio</a>
+            <a href="#" class="text-(--text-inactive) bg-(--bg-text-inactive) p-1 rounded-md content-center">Pomodoro</a>
         </div>
     </header>
 </body>
