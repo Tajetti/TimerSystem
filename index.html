@@ -1,29 +1,35 @@
-<?php 
-    require 'components/header.php'
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TimerSystem</title>
 
     <link rel="stylesheet" href="style/global.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="js/relogio.js" defer></script>
 </head>
-<body>
-    <header class="flex justify-between py-3 px-20 bg-(--cor-menubar)">
-        <div class="flex">
-            <img class="object-contain" src="Assets/Image/logo.png" alt="">
-            <p class="content-center text-white m-2 font-bold">TimerSystem</p>
-        </div>
-        <div class="flex gap-3 pr-2">
-            <a href="#" class="bg-(--bg-text-active) text-white content-center p-1 rounded-md">Relógio</a>
-            <a href="#" class="text-(--text-inactive) bg-(--bg-text-inactive) p-1 rounded-md content-center">Pomodoro</a>
-        </div>
+<body class="bg-gradient-to-r from-[var(--bg-esquerdo)] to-[var(--bg-direito)]">
+    <header class="flex justify-between items-center py-2 px-10 bg-[var(--cor-menubar)] min-w-[320px]">
+    <div class="flex items-center">
+        <img src="Assets/Image/logo.png" alt="Logo" class="h-8 w-8 mr-2">
+        <span class="text-white text-lg font-bold">TimerSystem</span>
+    </div>
+    <div class="flex gap-2 flex-wrap">
+        <a href="#" class="bg-[var(--bg-text-active)] px-3 text-white rounded-md">Relógio</a>
+        <a href="#" class="text-[var(--text-inactive)] px-2 bg-[var(--bg-text-inactive)] rounded-md">Pomodoro</a>
+    </div>
     </header>
+    <main class="mx-auto max-w-xl text-center">
+        <h1 class="text-white text-3xl font-bold pt-20 pb-3">Horário Atual</h1>
+        <p class="text-[var(--text-inactive)] pb-3">Acompanhe o tempo em tempo real</p>
+        <section class="bg-[var(--bg-center)] rounded-2xl shadow-lg">
+            <h2 id="horarioAtual" class="text-7xl pt-[85px] pb-[82px] text-white"></h2>
+            <p id="dataAtual" class="text-[var(--text-inactive)] pb-[34px]"></p>
+        </section>
+    </main>
 </body>
 </html>
