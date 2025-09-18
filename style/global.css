@@ -8,3 +8,7 @@
     --bg-direito: #16213E;
     --bg-center: #1E1E3F;
 }
+
+.display-none{
+    display: none;
+}

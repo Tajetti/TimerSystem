@@ -12,6 +12,15 @@ const menosSegundos = document.getElementById('menosSegundos')
 const segundos = document.getElementById('segundos')
 const maisSegundos = document.getElementById('maisSegundos')
 
+const cronometros = document.getElementById('cronometros')
+
+const iniciar = document.getElementById('iniciar')
+const parar = document.getElementById('parar')
+
+const musica = new Audio('Assets/audio/GatinhaAssanhada.mp3')
+
+let timer = null
+
 function atualizarTempo(){ 
     tempoTotalPomodoro.textContent = `${horas.value.padStart(2, "0")}:${minutos.value.padStart(2, "0")}:${segundos.value.padStart(2, "0")}`
 }
@@ -85,5 +94,30 @@ maisSegundos.addEventListener('click', function() {
 horas.addEventListener('input', atualizarTempo);
 minutos.addEventListener('input', atualizarTempo);
 segundos.addEventListener('input', atualizarTempo);
+
+function iniciarCronometro() {
+  let totalSegundos =
+    parseInt(horas.value) * 3600 +
+    parseInt(minutos.value) * 60 +
+    parseInt(segundos.value);
+
+    cronometros.classList.add('display-none');
+    iniciar.classList.add('display-none');
+    parar.classList.remove('display-none');
+
+  timer = setInterval(() => {
+    if (totalSegundos > 0) {
+      totalSegundos--;
+      horas.value = Math.floor(totalSegundos / 3600).toString().padStart(2, '0');
+      minutos.value = Math.floor((totalSegundos % 3600) / 60).toString().padStart(2, '0');
+      segundos.value = (totalSegundos % 60).toString().padStart(2, '0');
+      atualizarTempo();
+    } else {
+        clearInterval(timer)
+        musica.play()
+    }
+  }, 1000);
+}
+
 
 atualizarTempo()
