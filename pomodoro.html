@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimerSystem</title>
+
+  <link rel="stylesheet" href="style/global.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="js/pomodoro.js" defer></script>
+</head>
+<body class="bg-gradient-to-r from-[var(--bg-esquerdo)] to-[var(--bg-direito)] font-[Inter]">
+  <!-- HEADER -->
+  <header
+    class="flex flex-wrap justify-between items-center py-2 px-5 sm:px-10 bg-[var(--cor-menubar)] min-w-[320px] gap-2">
+    <div class="flex items-center">
+      <img src="Assets/Image/logo.png" alt="Logo" class="h-8 w-8 mr-2">
+      <span class="text-white text-lg font-bold">TimerSystem</span>
+    </div>
+    <div class="flex gap-2 flex-wrap text-sm sm:text-base">
+      <a href="index.html"
+        class="text-[var(--text-inactive)] px-2 py-1 bg-[var(--bg-text-inactive)] rounded-md">Relógio</a>
+      <a href="#"
+        class="bg-[var(--bg-text-active)] px-3 py-1 text-white rounded-md">Pomodoro</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-xl text-center px-4 sm:px-6">
+    <h1 class="text-white text-2xl sm:text-3xl font-bold pt-10 sm:pt-20 pb-3">Pomodoro</h1>
+    <p class="text-[var(--text-inactive)] pb-3 text-sm sm:text-base">Configure e controle seu tempo</p>
+
+    <section class="bg-[var(--bg-center)] rounded-2xl shadow-lg w-full">
+      <h2 id="" class="text-5xl sm:text-7xl pt-16 sm:pt-[85px] pb-16 sm:pb-[82px] text-white"></h2>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center sm:items-start p-5 gap-5">
+        <div class="flex flex-col items-center">
+          <p class="text-[var(--text-inactive)] pb-1 text-sm sm:text-base">Horas</p>
+          <div class="flex items-center gap-2">
+            <button
+              class="bg-[var(--border-menubar)] w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] text-white rounded-sm cursor-pointer hover:bg-[var(--hover-menubar)] active:bg-[var(--active-menubar)]">-</button>
+            <input value="00" type="text"
+              class="w-[50px] sm:w-[60px] h-[40px] sm:h-[48px] bg-[var(--cor-menubar)] rounded-sm text-white text-[18px] sm:text-[20px] text-center border-2 border-[var(--bg-text-inactive)] focus:outline-[var(--bg-text-active)]">
+            <button
+              class="bg-[var(--border-menubar)] w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] text-white rounded-sm cursor-pointer hover:bg-[var(--hover-menubar)] active:bg-[var(--active-menubar)]">+</button>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <p class="text-[var(--text-inactive)] pb-1 text-sm sm:text-base">Horas</p>
+          <div class="flex items-center gap-2">
+            <button
+              class="bg-[var(--border-menubar)] w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] text-white rounded-sm cursor-pointer hover:bg-[var(--hover-menubar)] active:bg-[var(--active-menubar)]">-</button>
+            <input value="00" type="text"
+              class="w-[50px] sm:w-[60px] h-[40px] sm:h-[48px] bg-[var(--cor-menubar)] rounded-sm text-white text-[18px] sm:text-[20px] text-center border-2 border-[var(--bg-text-inactive)] focus:outline-[var(--bg-text-active)]">
+            <button
+              class="bg-[var(--border-menubar)] w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] text-white rounded-sm cursor-pointer hover:bg-[var(--hover-menubar)] active:bg-[var(--active-menubar)]">+</button>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <p class="text-[var(--text-inactive)] pb-1 text-sm sm:text-base">Horas</p>
+          <div class="flex items-center gap-2">
+            <button
+              class="bg-[var(--border-menubar)] w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] text-white rounded-sm cursor-pointer hover:bg-[var(--hover-menubar)] active:bg-[var(--active-menubar)]">-</button>
+            <input value="00" type="text"
+              class="w-[50px] sm:w-[60px] h-[40px] sm:h-[48px] bg-[var(--cor-menubar)] rounded-sm text-white text-[18px] sm:text-[20px] text-center border-2 border-[var(--bg-text-inactive)] focus:outline-[var(--bg-text-active)]">
+            <button
+              class="bg-[var(--border-menubar)] w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] text-white rounded-sm cursor-pointer hover:bg-[var(--hover-menubar)] active:bg-[var(--active-menubar)]">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-6 sm:pb-8">
+        <button
+          class="bg-[var(--bg-text-active)] text-white text-[18px] sm:text-[20px] px-4 py-2 rounded-md active:bg-[var(--bg-text-inactive)] cursor-pointer">Iniciar</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
