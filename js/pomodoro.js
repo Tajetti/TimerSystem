@@ -29,10 +29,10 @@ menosHoras.addEventListener('click', function() {
 
 maisHoras.addEventListener('click', function() {
     let valor = parseInt(horas.value) || 0;
-    if (valor < 99) {
+    if (valor < 24) {
         valor++;
     } else {
-        valor = 99;
+        valor = 24;
     }
     horas.value = valor.toString().padStart(2, '0');
     atualizarTempo();
