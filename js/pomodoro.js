@@ -120,4 +120,11 @@ function iniciarCronometro() {
 }
 
 
+function pararCronometro() {
+    cronometros.classList.remove('display-none');
+    iniciar.classList.remove('display-none');
+    parar.classList.add('display-none');
+    musica.pause()
+}
+
 atualizarTempo()
