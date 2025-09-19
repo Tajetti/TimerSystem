@@ -95,15 +95,17 @@ horas.addEventListener('input', atualizarTempo);
 minutos.addEventListener('input', atualizarTempo);
 segundos.addEventListener('input', atualizarTempo);
 
+let totalSegundos = 0; // Torna global
+
 function iniciarCronometro() {
-  let totalSegundos =
+  totalSegundos =
     parseInt(horas.value) * 3600 +
     parseInt(minutos.value) * 60 +
     parseInt(segundos.value);
 
-    cronometros.classList.add('display-none');
-    iniciar.classList.add('display-none');
-    parar.classList.remove('display-none');
+  cronometros.classList.add('display-none');
+  iniciar.classList.add('display-none');
+  parar.classList.remove('display-none');
 
   timer = setInterval(() => {
     if (totalSegundos > 0) {
@@ -113,18 +115,28 @@ function iniciarCronometro() {
       segundos.value = (totalSegundos % 60).toString().padStart(2, '0');
       atualizarTempo();
     } else {
-        clearInterval(timer)
-        musica.play()
+      clearInterval(timer);
+      musica.play();
     }
   }, 1000);
 }
 
-
 function pararCronometro() {
-    cronometros.classList.remove('display-none');
-    iniciar.classList.remove('display-none');
-    parar.classList.add('display-none');
-    musica.pause()
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  }
+  totalSegundos = 0;
+  horas.value = "00";
+  minutos.value = "00";
+  segundos.value = "00";
+  atualizarTempo();
+
+  cronometros.classList.remove('display-none');
+  iniciar.classList.remove('display-none');
+  parar.classList.add('display-none');
+  musica.pause();
+  musica.currentTime = 0;
 }
 
 atualizarTempo()
