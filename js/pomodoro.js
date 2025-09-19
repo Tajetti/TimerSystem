@@ -16,6 +16,7 @@ const cronometros = document.getElementById('cronometros')
 
 const iniciar = document.getElementById('iniciar')
 const parar = document.getElementById('parar')
+const pomodorosFeitos = document.getElementById('pomodorosFeitos')
 
 const musica = new Audio('Assets/audio/GatinhaAssanhada.mp3')
 
@@ -95,7 +96,8 @@ horas.addEventListener('input', atualizarTempo);
 minutos.addEventListener('input', atualizarTempo);
 segundos.addEventListener('input', atualizarTempo);
 
-let totalSegundos = 0; // Torna global
+let totalSegundos = 0;
+let pomodorosContador = 0
 
 function iniciarCronometro() {
   totalSegundos =
@@ -115,8 +117,10 @@ function iniciarCronometro() {
       segundos.value = (totalSegundos % 60).toString().padStart(2, '0');
       atualizarTempo();
     } else {
-      clearInterval(timer);
-      musica.play();
+        pomodorosContador++
+        pomodorosFeitos.textContent = `Número de pomodoro: ${pomodorosContador}`
+        clearInterval(timer);
+        musica.play();
     }
   }, 1000);
 }
